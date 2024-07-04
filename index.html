@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7d48c5bf01.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="" class="logo" alt="">
+                <ul id="sidemenu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <!-- <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li> -->
+                    <li><a href="#contact">Contact</a></li>
+                    <i class=" fas fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class=" fas fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <!-- <p>Web Developer</p> -->
+                <h1>Hi,I'm <span>Sreeraj</span>  <br>From India</h1>
+            </div>
+        </div>  
+    </div>
+
+
+    <!-- about -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/sreeraj.jpg" alt=""  srcset="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>MCA graduate with a strong interest in software development, Effective team player with excellent time
+                        management skills. Committed to continuous learning and staying updated with industry trends. Seeking
+                        opportunities to contribute to web development projects and deliver high-quality solutions</p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                            <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                        </div>
+                            <div class="tab-contents active-tab" id="skills">
+                                <ul>
+                                    <li><span>HTML</span></li>
+                                    <li><span>CSS</span></li>
+                                    <li><span>JavaScript</span></li>
+                                    <li><span>Python</span></li>
+                                    <li><span>C Programming</span></li>
+                                    <li><span>MYSQL</span></li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="education">
+                                <ul>
+                                    <li><span>Master of Computer Application(2023-2025)</span><br>ST Joseph Engineering College <br>Vamanjoor, Manglore, Karnataka, India</li>
+                                    <li><span>Bachelore of Computer Application(2019-2022)</span><br>St.Aloysius College <br>Mangalore, Karnataka, India</li>
+                                    <li><span>PUC (2017-19)</span><br>State syllabus -Kerala Higher Secondary Examination</li>
+                                    <li><span>SSLC (2016-17)</span><br>State syllabus, kerala Secondary Education Examination Board</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="projects">
+                                <ul>
+                                    <li><span>RESUME BUILDER(2024)</span><br>Designed and Developed  the Resume builder website,a responsive Resume builder platform .Utilized HTML,CSS,JavaScript and PHP to create a user-friendly interface with media queries across all devices enhancing website usability and accessibility for seamless online service booking. </li>
+                                    <li><span>TURF BOOKING(2023)</span><br>Developed an Turf booking website using HTML,CSS, JavaScript and PHP based on specific turf locations.</li>
+                                </ul>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <a href="SREERAJ_RESUME4.pdf" download class="btn ">Download CV</a>
+    </div>
+
+<!-- -contact -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p> <a href="mailto:sreerajkasaragod@gmail.com" style="text-decoration: none; color: aliceblue;"><i class="fa-regular fa-envelope"></i>sreerajkasaragod007@gmail.com</a></p>
+                <p><i class="fa-solid fa-phone"></i>8431968062</p>
+                <div class="social-icons">
+                        <a href="https://www.instagram.com/sree__raj7?igsh=YzU1NGVlODEzOA=="><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/SreerajA07?t=CONU96cFB-wRTXbRctnpPQ&s=09"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/sreeraj-a-14b97a211?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/sree0077"><i class="fa-brands fa-github"></i></a>
+                </div>
+                    
+            </div>
+            <div class="contact-right">
+                <form action="" name="submit-to-google-sheet">
+                    <input type="text" name="Name" id="" placeholder="Enter Your Name" required>
+                    <input type="email" name="Email" id="" placeholder="Enter The Email" required>
+                    <textarea name="Message" id="" rows="6" placeholder="Enter The Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right">
+        <p>Copyright &copy; Sreeraj</p>
+    </div>
+</div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents =document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of  tablinks){
+                tablink.classList.remove("active-link")
+            }
+        
+        
+            for(tabcontent of  tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        var sidemenu=document.getElementById("sidemenu");
+        function openmenu()
+        {
+            sidemenu.style.right="0";
+        }
+        function closemenu()
+        {
+            sidemenu.style.right="-200px";
+        }
+    </script>
+    
+      
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzNv8ZyU7osWZ7bA4rtJR9P0T-i2n1APrvXbFF5ZPeOskett5AbjPR-P1pwfptrlNzMaQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Message Send Successfully"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                    },4000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
